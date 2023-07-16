@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<!-- <h1>Mohamed Ashraf</h1>-->
+<!-- <div class="special">Plain old HTML</div> -->
+
+<input [disabled]="onSavee ? true : false" />
+<input [attr.disabled]="onSavee ? 'disabled' : null" />
+<td [attr.colspan]="3"></td>
+
+<button (click)="onSave($event)" [class.save]="save">Save</button>
+
+<h3>Current customer:{{ currentCustomer }}</h3>
+
+<h4>myClick is an event on the custom clickDirective</h4>
+<button type="button" (click)="clickMessage = $event" clickable>
+  click with myClick
+</button>
+{{ clickMessage | json }}
+
+<input (keydown.shift.t)="onKeydown($event)" />
+
+<div class="nav-container">
+  <button type="button" routerLink="/customers" class="nav-btn">
+    customers
+  </button>
+  <button type="button" routerLink="/orders" class="nav-btn">orders</button>
+  <button type="button" routerLink="" class="nav-btn">Home</button>
+</div>
